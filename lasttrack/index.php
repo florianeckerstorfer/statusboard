@@ -1,3 +1,6 @@
+<?php
+$username = isset($_GET['username']) ? $_GET['username'] : null;
+?>
 <!doctype html>
 <html>
 <head>
@@ -70,7 +73,7 @@ function init()
         document.getElementById('lasttrack').style.backgroundColor = 'black';
     }
 
-    var url = '/lasttrack/update.php?username=<?php echo $_GET['username']; ?>';
+    var url = '/lasttrack/update.php?username=<?php echo $username; ?>';
     var req = new XMLHttpRequest();
 
     req.onreadystatechange = ajaxStateChange.bind(req);
